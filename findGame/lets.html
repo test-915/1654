@@ -28,9 +28,19 @@
 				var kai = document.getElementsByClassName("KAIX8d");
 				//遍历所有主场
 				for(var i=0 ; i<kai.length ; i++){
+					
 					//绑定表格、主体
 					var table = kai[i].children[0];
 					var kcd = table.children[4];
+					
+					
+					
+					
+					
+					//如果球队名为待定，直接终止：
+					if(kcd.children[1].children[0].textContent == "待定"){
+						continue;
+					}
 					
 					
 					//主场排版
@@ -2841,15 +2851,23 @@
 
 				.imspo_mt__mtc-ws {
 					border-radius: 8px;
-					background: #ffffffe6;
+					/* background: #ffffffe6; */
+					/* 透明背景 */
+					background:linear-gradient(rgba(255,255,255,0), rgba(255,255,255,0.9)),url(https://raw.githubusercontent.com/test-915/1654/master/findGame/img/yibo.00d31770fc4f5b6b92e225218d600ee2.png) no-repeat 50% 50%/* / 90% 90% */;
+					opacity: 0.95;
 					box-shadow: 0 0 0 1px #dadce0;
 					margin: 8px
+					
 				}
 
 				.KAIX8d {
 					width: 100%;
 					table-layout: fixed;
-					border-spacing: 0
+					border-spacing: 0;
+					background: #ffffffe0;
+					/* background-image: url("https://raw.githubusercontent.com/test-915/1654/master/findGame/img/yibo.00d31770fc4f5b6b92e225218d600ee2.png");
+					opcity:0.4;
+					filter: alpha(opacity=40); */
 				}
 
 				.imspo_mt__mtc-no .KAIX8d {
